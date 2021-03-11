@@ -120,16 +120,71 @@ li a:hover:not(.active) {
 </ul>
 
 <div class="bg-img">
-    
-    <div class="text-block">
-        <h4>Overview About Student Information Database Web System</h4>
-        <p>This databse web system will help the administrator to integrate basic information into the database and allow the administrator to view it again in the future.</p>
-        <p>This is a web-based student information system, an open architecture for customization and interoperability, and a scalable design that allows for integration with other system.</p>
-      </div>
-    </div>
-  
+    <?php
+    $date = date("d-m-Y");
+ extract($_POST);
+ ?>
+ <p>Date: <b><?php print($date) ?></b></p>
+ <h3>STUDENT INFORMATION DATABASE WEB SYSTEM</h3>
+ <table align="center" border="1" style="background-color:rgba(0, 0, 0, 0.5);" >
+ <tr><td>StudentName</td>
+ <td>:</td>
+ <td><b><?php print($adName) ?></b></td>
+ </tr>
 
 
 
+ <tr><td>Student Identification Card</td>
+ <td>:</td>
+ <td><b><?php print($member1) ?></b></td>
+ </tr>
+ <tr><td>Student Id Number</td>
+ <td>:</td>
+ <td><b><?php print($member2) ?></b></td>
+ </tr>
+ <tr><td>Student Course Code</td>
+ <td>:</td>
+ <td><b><?php print($member3) ?></b></td>
+ </tr>
+ <tr><td>Student Phone Number</td>
+ <td>:</td>
+ <td><b><?php print($member4) ?></b></td>
+ </tr>
+ <tr><td>Student Address</td>
+ <td>:</td>
+ <td><b><?php print($member5) ?></b></td>
+ </tr>
+ </table>
+ <?php
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "student";
+
+ // Create connection
+ $conn = new mysqli($servername, $username, $password, $dbname);
+
+ // Check connection
+ if ($conn->connect_error) {
+ die("Connection failed: " . $conn->connect_error); }
+ //create query
+ $sql = "INSERT INTO studentdata (StudentName, StudentIdentificationCard, StudentIdNumber, StudentCourseCode, StudentPhoneNumber, StudentAddress)
+  VALUES ('$adName', '$member1', '$member2', '$member3', '$member4', '$member5')";
+ //execute query
+ if ($conn->query($sql) === TRUE) {
+ echo "New record created successfully";
+ }
+ else {
+ echo "Error: " . $sql . "<br>" . $conn->error;
+ }
+ //close connection
+ $conn->close();
+ ?>
+ <br>
+ <form>
+ <input type="button" name="printButton" onClick="window.print()" value="Print">
+ </form>
+ </div>
+ </div>
 </body>
 </html>

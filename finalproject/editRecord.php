@@ -23,7 +23,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-attachment: fixed;
 }
 
 /* Add styles to the form container */
@@ -120,16 +120,54 @@ li a:hover:not(.active) {
 </ul>
 
 <div class="bg-img">
-    
-    <div class="text-block">
-        <h4>Overview About Student Information Database Web System</h4>
-        <p>This databse web system will help the administrator to integrate basic information into the database and allow the administrator to view it again in the future.</p>
-        <p>This is a web-based student information system, an open architecture for customization and interoperability, and a scalable design that allows for integration with other system.</p>
-      </div>
-    </div>
-  
 
 
 
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "student";
+   
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error); }
+
+$Bil=$_REQUEST['id'];
+$query = "SELECT * from studentdata where Bil='".$Bil."'"; 
+$result = mysqli_query($conn, $query) or die ( mysqli_error());
+$row = mysqli_fetch_assoc($result);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Update Record</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="form">
+
+<h1>Update Record</h1>
+
+<div>
+<form name="form" method="post" action="view.php"> 
+<input type="hidden" name="new" value="1" />
+<input name="Bil" type="hidden" value="<?php echo $row['Bil'];?>" />
+<p><input type="text" name="$adName" value="<?php echo $row['StudentName'];?>" /></p>
+<p><input type="text" name="$member1" value="<?php echo $row['StudentIdentificationCard'];?>" /></p>
+<p><input type="text" name="$member2" value="<?php echo $row['StudentIdNumber'];?>" /></p>
+<p><input type="text" name="$member3" value="<?php echo $row['StudentCourseCode'];?>" /></p>
+<p><input type="text" name="$member4" value="<?php echo $row['StudentPhoneNumber'];?>" /></p>
+<p><input type="text" name="$member5" value="<?php echo $row['StudentAddress'];?>" /></p>
+<p><input name="submit" type="submit" value="Update" /></p>
+</form>
+
+</div>
+</div>
 </body>
 </html>

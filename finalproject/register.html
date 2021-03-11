@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="navbar.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("uni.jpg");
+
+  min-height: 700px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="view.php">View Student Data</a></li>
+
+  <li style="float:right"><a class="active" href="home.html">STUDENT INFORMATION DATABASE WEB SYSTEM</a></li>
+</ul>
+
+
+<div class="bg-img"><br>
+  <form method="POST" action="saveRegistrationNew.php" name="regForm">
+  
+    <br>
+<table align="center" border="1" style="background-color:rgba(0, 0, 0, 0.5);" >
+<tr>
+ <th colspan="2" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Student Information</th>
+ </tr>
+ <tr>
+ <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Name</td>
+ <td width="500"><input type="text" name="Name" size="30"></td>
+ </tr>
+ <tr>
+ <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Identification Card</td>
+ <td width="500"><input type="text" name="member1" size="30">      </td>
+ </tr>
+ <tr>
+ <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Email</td>
+ <td width="500"><input type="text" name="member2" size="30"></td>
+ <tr>
+ <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Gender</td>
+ <td width="350"><input type="radio" id="Male" name="member3" value="male" size="30">
+  <label style="color: white;" for="male">Male</label><br>
+  <input type="radio" id="Female" name="member3" value="Female" size="30">
+  <label style="color: white;" for="Female">Female</label><br>
+  </td>
+ </tr>
+ <tr>
+  <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Religion</td>
+  <td width="350"><input type="text" name="member4" size="30"></td>
+</tr>
+<tr>
+  <th width="10" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Nation</td>
+  <td width="200"><input type="text" name="member5" size="10"></td>
+</tr>
+ <tr>
+ <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;" >Phone Number</td>
+ <td width="350"><input type="tel" name="member6" size="30"></td>
+ </tr>
+ <tr>
+  <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Mobile Number</td>
+  <td width="350"><input type="tel" name="member7" size="30"></td>
+  </tr>
+ <tr>
+ <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Address</td>
+ <td width="350"><input type="text" name="member8" size="30"></td>
+ </tr>
+ <tr>
+  <th colspan="2" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Father Information</th>
+  </tr>
+  <tr>
+    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Name</td>
+    <td width="500"><input type="text" name="member9" size="30"></td>
+    </tr>
+    <tr>
+    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Identification Card</td>
+    <td width="500"><input type="text" name="member10" size="30">      </td>
+    </tr>
+    <tr>
+    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Email</td>
+    <td width="500"><input type="text" name="member11" size="30"></td>
+  </tr>
+    <tr>
+     <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Religion</td>
+     <td width="350"><input type="text" name="member12" size="30"></td>
+   </tr>
+   <tr>
+     <th width="10" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Nation</td>
+     <td width="200"><input type="text" name="member13" size="10"></td>
+   </tr>
+    <tr>
+    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;" >Phone Number</td>
+    <td width="350"><input type="tel" name="member14" size="30"></td>
+    </tr>
+    <tr>
+     <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Mobile Number</td>
+     <td width="350"><input type="tel" name="member15" size="30"></td>
+     </tr>
+    <tr>
+    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Address</td>
+    <td width="350"><input type="text" name="member16" size="30"></td>
+    </tr>
+    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Occupation</td>
+      <td width="350"><input type="text" name="member17" size="30"></td>
+      </tr>
+      <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Monthly Income</td>
+        <td width="350"><input type="text" name="member18" size="30"></td>
+        </tr>
+        <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Number Of Dependent</td>
+          <td width="350"><input type="number" name="member19" size="30"></td>
+          </tr>
+          <tr>
+            <th colspan="2" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Mother Information</th>
+            </tr>
+            <tr>
+              <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Name</td>
+              <td width="500"><input type="text" name="member20" size="30"></td>
+              </tr>
+              <tr>
+              <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Identification Card</td>
+              <td width="500"><input type="text" name="member21" size="30">      </td>
+              </tr>
+              <tr>
+              <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Email</td>
+              <td width="500"><input type="text" name="member22" size="30"></td>
+            </tr>
+              <tr>
+               <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Religion</td>
+               <td width="350"><input type="text" name="member23" size="30"></td>
+             </tr>
+             <tr>
+               <th width="10" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Nation</td>
+               <td width="200"><input type="text" name="member24" size="10"></td>
+             </tr>
+              <tr>
+              <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;" >Phone Number</td>
+              <td width="350"><input type="tel" name="member25" size="30"></td>
+              </tr>
+              <tr>
+               <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Mobile Number</td>
+               <td width="350"><input type="tel" name="member26" size="30"></td>
+               </tr>
+              <tr>
+              <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Address</td>
+              <td width="350"><input type="text" name="member27" size="30"></td>
+              </tr>
+              <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Occupation</td>
+                <td width="350"><input type="text" name="member28" size="30"></td>
+                </tr>
+                <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Monthly Income</td>
+                  <td width="350"><input type="text" name="member29" size="30"></td>
+                  </tr>
+                  <tr>
+                    <th colspan="2" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Academic Registration</th>
+                    </tr>
+                    <tr>
+                    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">IC Number</td>
+                    <td width="500"><input type="text" name="member30" size="30"></td>
+                    </tr>
+                    <tr>
+                    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Course</td>
+                    <td width="500"><input type="text" name="member31" size="30">      </td>
+                    </tr>
+                    <tr>
+                    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Course Code</td>
+                    <td width="500"><input type="text" name="member32" size="30"></td>
+                    <tr>
+                    
+                    <tr>
+                     <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Program</td>
+                     <td width="350"><input type="text" name="member33" size="30"></td>
+                   </tr>
+                   <tr>
+                     <th width="10" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Session</td>
+                     <td width="200"><input type="text" name="member34" size="10"></td>
+                   </tr>
+                    <tr>
+                    <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;" >ID Registration</td>
+                    <td width="350"><input type="tel" name="member35" size="30"></td>
+                    </tr>
+                    <tr>
+                       <th width="104" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">Status</td>
+                       <td width="350"><input type="radio" id="Active" name="member36" value="Active" size="30">
+                        <label style="color: white;" for="Active">Active</label><br>
+                        <input type="radio" id="Not Active" name="member36" value="Not Active" size="30">
+                        <label style="color: white;" for="Not Active">Not Active</label><br>
+                        </td>
+                       </tr>
+                      
+
+
+
+                       <tr>
+                        <th colspan="2" style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;" >Subject Registration based on Course</th>
+                        </tr>
+                        
+                       <tr>
+                         <th>
+                        <td>
+                        
+                            <b><label style="color: white;" for="cars">CT203</label><br></b>
+                            <input type="checkbox" id="Introduction to Programming" name="member37" value="YES">
+                            <label style="color: white;" for="vehicle1">Introduction to Programming</label><br>
+                            <input type="checkbox" id="vehicle2" name="member38" value="YES">
+                            <label style="color: white;" for="vehicle2">Human Computer Interaction</label><br>
+                            <input type="checkbox" id="vehicle3" name="member39" value="YES">
+                            <label style="color: white;" for="vehicle3">Computer Organization and Architecture</label><br>
+                            <input type="checkbox" id="vehicle1" name="member40" value="YES">
+                            <label style="color: white;" for="vehicle1">Operating System</label><br>
+                            <input type="checkbox" id="vehicle2" name="member41" value="YES">
+                            <label style="color: white;" for="vehicle2">Discrete Mathematics 1</label><br>
+                            <input type="checkbox" id="vehicle3" name="member42" value="YES">
+                            <label style="color: white;" for="vehicle3">Bahasa Melayu Komunikasi 2</label><br><br>
+                        
+                            <b><label style="color: white;" for="cars">CT206</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Computer Organization and Architecture</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Digital Technology and Society</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Computer Systems and Networking (Cisco 1)</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Statistics</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Hubungan Etnik</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">English for Academic Purposes</label><br><br>
+                        
+                            <b><label style="color: white;" for="cars">CM201</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Basic Drawing</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Script Writing and Storyboard</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Audio Production </label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Politics and World Civilization </label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">TITAS or Bahasa Melayu Komunikasi 2</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Concept Art Illustration</label><br><br>
+                     
+
+                            <tr>
+                              <th>
+                             <td>
+                            <b><label style="color: white;" for="cars">AB201</label><br></b>
+                              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Business Management</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">English For Business</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Information Technology For Business</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Personal Grooming</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Tamadun Islam Dan Tamadun Asia (TITAS)7</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Bahasa Melayu Komunikasi 2</label><br><br>
+                            
+                            <b><label style="color: white;" for="cars">AB202</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Principles of Management</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Information Technology for Business</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Business Mathematics & Statistics</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Mandarin 1</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Hubungan Etnik </label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Principles of Marketing</label><br><br>
+                            
+                            <b><label style="color: white;" for="cars">AA201</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Commercial Law</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Introduction To Economics</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Fundamental Of Management</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Personal GroAoming</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Introduction To Financial Reporting</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Introduction To Costing And Management Accounting</label><br><br>
+                       
+                        <tr>
+                          <th>
+                         <td>
+                            <b><label style="color: white;" for="cars">BE201</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Introduction to the Study of Language</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">English Grammar</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Critical Reading</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Crafting an Effective Writer I</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Computer Application</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Phonetics and Phonology</label><br><br>
+                            
+                            <b><label style="color: white;" for="cars">AC201</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Introduction to Programming</label><bsr>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Human Computer Interaction</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Computer Organization and Architecture</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Operating System</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Discrete Mathematics 1</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Bahasa Melayu Komunikasi 2</label><br><br>
+                            
+                            <b><label style="color: white;" for="cars">BK201</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Bahasa Melayu Komunikasi 2</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Business Mathematics</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Financial Management</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Human Resource Management </label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Fundamental of Management</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Business Communication</label><br><br>
+                       
+                        <tr>
+                          <th>
+                         <td>
+                            <b><label style="color: white;" for="cars">BE202</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Play in Early Childhood Education</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Language and Literacy in Early Childhood</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Management of Early Childhood Education Institution</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Children's Health, Nutrition and Safety </label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Assessment and Evaluation for Early Childhood Education</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Counselling and Guidance for Early Childhood Education. </label><br><br>
+                            
+                            <b><label style="color: white;" for="cars">BE203</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Principles of Second Language Teaching and Learning</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">History and Philosophy of Education in Malaysia</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Educational Psychology</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">English Grammar</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Academic Reading and Writing</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Phonetics and Phonology</label><br><br>
+                            
+                            <b><label style="color: white;" for="cars">CT204</label><br></b>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Computer Organisation and Architecture</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Operating Systems</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Digital Technology and Society</label><br>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label style="color: white;" for="vehicle1">Discrete Mathematics 1</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label style="color: white;" for="vehicle2">Introduction to Object-Oriented Programming</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label style="color: white;" for="vehicle3">Pengajian Malaysia 3</label><br><br>
+                         </tr>
+                        </th>
+                      </td>
+                          
+                          </form>
+                           
+                        </td>
+                        
+                        
+                        
+                        </tr>
+                        
+
+                        
+ <tr>
+  <td width="304"><input type="submit" name="submitBtn" value="Submit" class="button"></td>
+  <td width="350"><input type="reset" name="resetBtn" value="Clear" class="button"></td>
+  </tr>
+  </table>
+                       <br>
+
+
+
+</div>
+</form>
+
+
+
+
+</body>
+</html>

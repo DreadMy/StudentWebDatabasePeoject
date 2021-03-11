@@ -23,7 +23,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-attachment: fixed;
 }
 
 /* Add styles to the form container */
@@ -93,20 +93,40 @@ li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
-.container {
-  position: relative;
-  font-family: Arial;
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-.text-block {
-  position: absolute;
-  top: 50px;
-  right: 420px;
-  background-color:rgba(0, 0, 0, 0.5);
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
   color: white;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+
+
+
 
 </style>
 </head>
@@ -116,20 +136,18 @@ li a:hover:not(.active) {
   <li><a href="home.html">Home</a></li>
   <li><a href="faq.html">FAQ</a></li>
   <li><a href="about.html">About</a></li>
+  <li><a href="view.php">View Student Data</a></li>
+  <li><a href="searchRecord.php">Search Student Data</a></li>
   <li style="float:right"><a class="active" href="home.html">STUDENT INFORMATION DATABASE WEB SYSTEM</a></li>
 </ul>
 
-<div class="bg-img">
-    
-    <div class="text-block">
-        <h4>Overview About Student Information Database Web System</h4>
-        <p>This databse web system will help the administrator to integrate basic information into the database and allow the administrator to view it again in the future.</p>
-        <p>This is a web-based student information system, an open architecture for customization and interoperability, and a scalable design that allows for integration with other system.</p>
-      </div>
-    </div>
-  
 
+<div class="bg-img"><br>
 
-
+<form action="view.php" method="post">
+Student Name: <input name="name" type="text" size="30"><br><br>
+<input type="submit" name="Submit" value="Search">
+</form>
+<p><a href="adminMenu.php">Back to Main Menu</a></p>
 </body>
 </html>

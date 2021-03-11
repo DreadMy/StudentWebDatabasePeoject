@@ -15,15 +15,19 @@ body, html {
 
 .bg-img {
   /* The image used */
-  background-image: url("uni.jpg");
+background-image: url("uni.jpg");
+
+
 
   min-height: 700px;
 
+
+  
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-attachment: fixed;
 }
 
 /* Add styles to the form container */
@@ -33,7 +37,7 @@ body, html {
   margin: 20px;
   max-width: 300px;
   padding: 16px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Full-width input fields */
@@ -93,20 +97,7 @@ li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
-.container {
-  position: relative;
-  font-family: Arial;
-}
 
-.text-block {
-  position: absolute;
-  top: 50px;
-  right: 420px;
-  background-color:rgba(0, 0, 0, 0.5);
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 </style>
 </head>
@@ -119,17 +110,38 @@ li a:hover:not(.active) {
   <li style="float:right"><a class="active" href="home.html">STUDENT INFORMATION DATABASE WEB SYSTEM</a></li>
 </ul>
 
+
 <div class="bg-img">
-    
-    <div class="text-block">
-        <h4>Overview About Student Information Database Web System</h4>
-        <p>This databse web system will help the administrator to integrate basic information into the database and allow the administrator to view it again in the future.</p>
-        <p>This is a web-based student information system, an open architecture for customization and interoperability, and a scalable design that allows for integration with other system.</p>
-      </div>
-    </div>
-  
 
-
-
+<html>
+<head>
+<title>Creative Multimedia Competition 2020</title>
+</head>
+<body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "student";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+//get input valueS
+$Name=$_POST['Name'];
+// sql to delete a record
+$sql = "DELETE FROM studentdata WHERE name='$Name'";
+if ($conn->query($sql) === TRUE) {
+echo "Record deleted successfully";
+}
+else {
+echo "Error deleting record: " . $conn->error;
+}
+//close connection
+$conn->close();
+echo '<p><a href="home.html">Back to Home</a></p>';
+?>
 </body>
 </html>
